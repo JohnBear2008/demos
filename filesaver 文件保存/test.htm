@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="fileSaver.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var blob = new Blob(['out_put_string'], {type: "text/plain;charset=utf-8"});//out_put_string为需要保存到文件的字符串内容
+saveAs(blob, "filename.php");//filename.php为保存的文件名
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
