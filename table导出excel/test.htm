@@ -1,0 +1,17 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="FileSaver.min.js"></script>
+<script src="tableExport.js"></script>
+<button onclick="$('#table1').tableExport({type: 'excel', excelstyles: ['border-bottom', 'border-top', 'border-left', 'border-right']})"> 导出</button>
+<table id="table1" data-numcols="2" data-numrows="2">
+    <thead>
+        <tr>
+    <th>AAA</th>
+    <th>bbb</th>
+        </tr>
+    </thead>
+   
+    <tbody>
+    <tr><td>123</td><td>123</td></tr>
+    <tr><td>456</td><td>456</td></tr>
+   </tbody> 
+</table>
