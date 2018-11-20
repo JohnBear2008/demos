@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>打印</title>
+	
+<script src="jquery.js"></script>
+</head>
+<body>
+        <div class="rightBox">
+		<div class="title">订单详情<a href="javascript:void(0);" class="btn btn-print">打印</a></div>
+        <!--startprint-->
+                <div>需要打印的内容</div>
+		<!--endprint-->
+    </div>
+<script type="text/javascript">
+$(function(){
+    /*提交审核 */
+	$(".btn-print").on("click",function(){
+	    preview();
+	});
+	
+	function preview() { 
+		var bdhtml=window.document.body.innerHTML;//获取当前页的html代码 
+		var startStr="<!--startprint-->";//设置打印开始区域 
+		var endStr="<!--endprint-->";//设置打印结束区域 
+		var printHtml=bdhtml.substring(bdhtml.indexOf(startStr)+startStr.length,bdhtml.indexOf(endStr));//从标记里获取需要打印的页面 
+		window.document.body.innerHTML=printHtml;//需要打印的页面 
+		window.print(); 
+		window.document.body.innerHTML=bdhtml;//还原界面 
+		location.reload();
+	} 
+});     
+
+</script>
