@@ -1,0 +1,15 @@
+1、需要引入jquery.js和jquery.table2excel.min.js
+2、增加绑定事件，例子:
+-------------------
+//导出excel
+$("#output").click(function(){
+        var myDate = new Date();
+        $("#example").table2excel({
+            exclude: ".noExl",
+            name: "Excel Document Name.xlsx",
+            filename: myDate.toLocaleString(),
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true
+        });
+    }); 
