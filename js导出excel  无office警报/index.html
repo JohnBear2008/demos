@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Export to excel test</title>
+        <script src="dist/excellentexport.js"></script>
+        <style>
+            table, tr, td {
+                border: 1px black solid;
+            }
+        </style>
+        <script>
+            function newApi(format) {
+                return ExcellentExport.convert({
+                    anchor: 'excelA' ,
+                    filename: 'test',
+                    format: format
+                }, [{
+                    name: 'Sheet 1',
+                    from: {
+                        table: 'datatable'
+                    }
+                }]);
+
+            }
+
+           
+        </script>
+    </head>
+    <body>
+        <h1>&nbsp;</h1>
+
+        
+        <a id="excelA"><button id='buttonexcel' onClick="newApi('xls');">导出excel</button></a>
+    
+        <br/>
+
+        <table id="datatable">
+            <tr>
+                <th>Column 1</th>
+                <th>Column "cool" 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+            </tr>
+            <tr>
+                <td>100,111</td>
+                <td>200</td>
+                <td>030</td>
+                <td>áéíóú</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>500</td>
+                <td>Chinese chars: 解决导出csv中文乱码问题</td>
+                <td>àèìòù</td>
+            </tr>
+            <tr>
+                <td>Text</td>
+                <td>More text</td>
+                <td>Text with
+                new line</td>
+                <td>ç ñ ÄËÏÖÜ äëïöü</td>
+            </tr>
+        </table>
+    </body>
+</html>
