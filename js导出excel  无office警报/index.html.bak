@@ -9,7 +9,7 @@
             }
         </style>
         <script>
-            function excelAPI(format,AID) {
+            function newApi(format,AID) {
                 return ExcellentExport.convert({
                     anchor: 'excelA' ,
                     filename: 'test',
@@ -30,7 +30,7 @@
         <h1>&nbsp;</h1>
 
         
-        <a id="excelA"><button id='buttonexcel' onClick="excelAPI('xls','excelA');">导出excel</button></a>
+        <a id="excelA"><button id='buttonexcel' onClick="newApi('xls','excelA');">导出excel</button></a>
     
         <br/>
 
